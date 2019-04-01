@@ -20,9 +20,12 @@ In no more than one paragraph, describe the problem your product will solve, and
 ## Initial Design Plan
 *You'll complete this section as part of Milestone 1, and update regularly.*
 
+**NOTE**: Your initial design plan may not fully reflect your final product,
+as projects evolve over time.
+
 ### Hardware Design
 - List the hardware components you'll be using, and how they interact. 
-  
+
 This is an appropriate place for a diagram. An EXCELLENT resource 
 for creating diagrams is the [Fritzing website](http://fritzing.org/home/ "Fritzing website")
 
@@ -30,15 +33,12 @@ for creating diagrams is the [Fritzing website](http://fritzing.org/home/ "Fritz
 
 ![A sample image to show how to add one to a repo](images/example.png "A sample image. This is the text that appears.")
 
-**NOTE**: Your initial design plan may not fully reflect your final product,
-as projects evolve over time.
-
 ### Software Design
 - List all of the classes and functions you'll be creating.
   - Your program must follow good coding standards. 
   Primarily, I mean your code should include meaningful functions 
   and appropriate variables, and be formatted and commented well. 
-  - This is Python (not C), so *classes are expected* to be well-designed and used throughout.
+  - If your programming language supports classes use them. *Classes are expected* to be well-designed and used throughout, if possible.
   - Sloppy code with no structure will be penalized. 
 
 This is an excellent place for a CRC card or two.
