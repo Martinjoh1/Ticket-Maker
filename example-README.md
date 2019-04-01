@@ -4,7 +4,7 @@
 -3. Use Markdown for formatting, and check it in Github before the due date for issues. 
 ```
 
-# P01: Project 2
+# P02: Project 3
 *Give your project a name and replace the above text with that name.*
 
 **Author(s)**: __*Scott Heggen (replace me!)*__
@@ -51,14 +51,23 @@ This is an excellent place for a CRC card or two.
 
 A sample (i.e., table) of the data would likely make this section clearest.
 
-## Files
+### Additional Requirement
+- Project 3 requires an additional requirement. Describe what additional component you will take on here. 
+Thoroughness is encouraged! Explain how your addition moves the project closer to "final product". 
+Pictures always help, too.
+
+## Delegation of Tasks
 *You'll complete this section as part of Milestone 1.*
 
-### Project Files
-List every file in your repository, and briefly summarize each file's purpose in a sentence.
+- List each member of your group here, and which component of the project they will be responsible for seeing to completion.
 
-### Data Files
-Also list your data files here, which will be due during Milestone 3. 
+*NOTE: While the person listed here is responsible for managing the completion of this portion of the project,
+it is still the entire team's responsibility to complete **all** tasks you describe. An inability to complete a component by one member of the team is a failure for the entire team, not just that individual. As we get closer to the end of this project, it will be essential that all members of the team lift up each other when one component is falling behind (hint: there is always one that becomes unexpectedly hard!), NOT tear down that member who was assigned responsibility for ensuring it gets completed. This requires good communication among members, clarity in expectations of each other, and ownership of responsibility. You will each need to demonstrate leadership when your component becomes the focus of the work.*
+
+## Files
+*You'll complete this section as part of Milestone 1, and update throughout the project.*
+
+List every file in your repository, and briefly summarize each file's purpose in a sentence.
 
 ## Instructions
 Explain how to use your product. 
@@ -105,23 +114,49 @@ You can't give both people 6 points each though, as the sum exceeds 10.
 
 *Partner 2 (replace this with your name): 0-10*
 
-### Code creation: 
+*Partner 3 (replace this with your name): 0-10*
+
+*Partner 4 (replace this with your name): 0-10*
+
+### Physical wiring/construction: 
 
 *Partner 1 (replace this with your name): 0-10*
 
 *Partner 2 (replace this with your name): 0-10*
 
-### Documentation creation:
+*Partner 3 (replace this with your name): 0-10*
+
+*Partner 4 (replace this with your name): 0-10*
+
+### Code creation/debugging/integration: 
 
 *Partner 1 (replace this with your name): 0-10*
 
 *Partner 2 (replace this with your name): 0-10*
 
-### Teamwork & Participation:
+*Partner 3 (replace this with your name): 0-10*
+
+*Partner 4 (replace this with your name): 0-10*
+
+### Documentation:
 
 *Partner 1 (replace this with your name): 0-10*
 
 *Partner 2 (replace this with your name): 0-10*
+
+*Partner 3 (replace this with your name): 0-10*
+
+*Partner 4 (replace this with your name): 0-10*
+
+### Leadership, Teamwork, & Participation:
+
+*Partner 1 (replace this with your name): 0-10*
+
+*Partner 2 (replace this with your name): 0-10*
+
+*Partner 3 (replace this with your name): 0-10*
+
+*Partner 4 (replace this with your name): 0-10*
 
 
 ---
