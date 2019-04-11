@@ -4,21 +4,27 @@
 -3. Use Markdown for formatting, and check it in Github before the due date for issues. 
 ```
 
-# P02: Project 3
-*Give your project a name and replace the above text with that name.*
+# P02: Ticket Tracker 
 
-**Author(s)**: __*Scott Heggen (replace me!)*__
 
-**Google Document**: __*Paste the link to your shared Google Document here*__
+**Author(s)**: John Martin, Aaron Christosn, Lakshiya Indreswaran, and Rofy Ray
 
+**Google Document**: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
 ---
 ## Purpose
-*You'll complete this section as part of Milestone 1.*
 
-In no more than one paragraph, describe the problem your product will solve, and how.
+The Theater department has been keeping track of their tickets by hand for a long time. We know that this is often inefficient, and inaccurate. We are hoping to use an embedded system to help them record ticket trends, as well as to make tickets electronically or physically. 
 
 ## Initial Design Plan
-*You'll complete this section as part of Milestone 1, and update regularly.*
+
+-Raspberry Pi
+
+-ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 
+https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
+
+-THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email)
+https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE
+
 
 **NOTE**: Your initial design plan may not fully reflect your final product,
 as projects evolve over time.
@@ -57,17 +63,18 @@ Thoroughness is encouraged! Explain how your addition moves the project closer t
 Pictures always help, too.
 
 ## Delegation of Tasks
-*You'll complete this section as part of Milestone 1.*
 
-- List each member of your group here, and which component of the project they will be responsible for seeing to completion.
+- John Martin: will work on getting card scanner to create ticket 
 
-*NOTE: While the person listed here is responsible for managing the completion of this portion of the project,
-it is still the entire team's responsibility to complete **all** tasks you describe. An inability to complete a component by one member of the team is a failure for the entire team, not just that individual. As we get closer to the end of this project, it will be essential that all members of the team lift up each other when one component is falling behind (hint: there is always one that becomes unexpectedly hard!), NOT tear down that member who was assigned responsibility for ensuring it gets completed. This requires good communication among members, clarity in expectations of each other, and ownership of responsibility. You will each need to demonstrate leadership when your component becomes the focus of the work.*
+- Rofy Ray: Will work on making card scanner to send the ticket 
+
+- Aaron Christson: will work on finding trends in ticket collection based on needs of the department
+
+- Lakshiya Indreswaran: will 
 
 ## Files
-*You'll complete this section as part of Milestone 1, and update throughout the project.*
 
-List every file in your repository, and briefly summarize each file's purpose in a sentence.
+N/A
 
 ## Instructions
 Explain how to use your product. 
@@ -82,14 +89,13 @@ Also, list any constraints that must exist for your product to work
 (e.g., Only works in low light situations).
 
 ## References
-*Start this section at the beginning of the project, and update it throughout.*
 
-Throughout this project, you'll be used outside resources.
-Reference ALL ideas or code which are not your own, and describe and
-how you integrated the ideas or code into your program. This includes
-online sources, people who have helped you, and any other resources that
-are not solely your own contribution. Lastly, include ALL resources you
-looked at, not just the ones you ended up using directly.
+- https://www.youtube.com/watch?v=9FxlQXuXxFU : how to get card scanner to work with actual cards 
+
+- https://www.raspberrypi.org/forums/viewtopic.php?t=69286 : how to send txt sms on Raspberry pi
+
+- https://raspberry-projects.com/pi/software_utilities/email/ssmtp-to-send-emails : how to send email with Raspberry pi 
+
 
 ## Summary and Reflection
 *You'll complete this part at the end of the project.*
