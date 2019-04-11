@@ -3,7 +3,7 @@
 
 **Author(s)**: John Martin, Aaron Christson, Lakshiya Indreswaran, and Rofy Ray
 
-**Google Document**: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
+*Google Document*: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
 ---
 ## Purpose
 
