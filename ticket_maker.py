@@ -1,6 +1,10 @@
 import datetime
 import csv
 import random
+import barcode
+import random
+from fpdf import FPDF
+from barcode.writer import ImageWriter
 
 
 def get_cust_name():
@@ -13,7 +17,7 @@ def get_cust_name():
         print ("Invalid entry; please enter a valid name.")
   return cust_name
 
-customername = get_cust_name()
+#customername = get_cust_name()
 
 
 def get_number_of_tickets(num_tickets):
@@ -27,7 +31,7 @@ def get_number_of_tickets(num_tickets):
         print ("Invalid entry for number of tickets.")
   return price
 
-  get_ticket_amount()
+  #get_ticket_amount()
 
 # num_tickets = get_number_of_tickets()
 
@@ -53,7 +57,7 @@ def gather(ticket_amt, price):
 
 def create_csv():
   """Make CSV file with appropriate headers"""
-  csvData = ['Name', 'Classification', 'Price']
+  csvData = ['Name', 'Classification', 'Price', 'ID']
 
   with open('ticket.csv', 'w') as csvFile:
     writer = csv.writer(csvFile)
@@ -65,31 +69,51 @@ def enter_csv():
   """Populate CSV file with information"""
   with open('ticket.csv', 'a') as csvAdd:
     writer = csv.writer(csvAdd)
-    writer.writerow(row)
+    #writer.writerow(row)
 
-  csvFile.close()
+  csvAdd.close()
 
 def samp_num():
   """Generate random ticket numer"""
   ranum = random.randint(1,1001)*7
   return ranum
 
-date = str(datetime.date.today())
+date = datetime.date.today()
 
 
-def make_tix():
+def make_tix(customername, bar_num, barcode):
   """Print ticket details"""
-  print("KINETIC EXPRESSIONS")
-  print("____________________________________")
-  print(" ")
-  print("             Date: ",time.strftime("%d/%m/%Y"))
-  print("             Time: ",time.strftime("%I:%M:%S"))
-  print("             Venue: Jelkyl Drama Center")
-  print(" Name            : ", name)
-  print(" Ticket ID       : ", ranum)
-  print(" ")
-  print("_____________________________________")
-  print(" ")
+  # print("KINETIC EXPRESSIONS")
+  # print("____________________________________")
+  # print(" ")
+  # print("             Date: ",date.strftime("%d/%m/%Y"))
+  # print("             Time: ",date.strftime("%I:%M:%S"))
+  # print("             Venue: Jelkyl Drama Center")
+  # print(" Name            : ", customername)
+  # print(" Ticket ID       : ", bar_num)
+  # print(" ")
+  #
+  # print("_____________________________________")
+  # print(" ")
+
+  pdf = FPDF()
+  pdf.add_page()
+  pdf.set_font("Arial", size=12)
+  pdf.cell(200, 10, txt="KINETIC EXPRESSIONS", ln=1, align="C")
+  pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
+  pdf.cell(200, 10, txt=" ", ln=3, align="C")
+  pdf.cell(200, 10, txt="             Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
+  pdf.cell(200, 10, txt="             Time: " + str(date.strftime("%I:%M:%S")), ln=5, align="C")
+  pdf.cell(200, 10, txt="             Venue: Jelkyl Drama Center", ln=6, align="C")
+  pdf.cell(200, 10, txt=" Name            : " + str(customername), ln=7, align="C")
+  pdf.cell(200, 10, txt=" Ticket ID       : " + str(bar_num), ln=8, align="C")
+  pdf.cell(200, 10, txt=" ", ln=9, align="C")
+  pdf.ln(10)
+  pdf.image("ean13_barcode.png", x=5, y=4, w=50)
+  #pdf.cell(200, 10, txt="{}".format("ean13_barcode.png"), ln=10, align="C")
+  pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
+  pdf.cell(200, 10, txt=" ", ln=12, align="C")
+  pdf.output("ticket.pdf")
 
   print_tix()
 
@@ -122,7 +146,7 @@ def mainmenu():
   print("M - to return to Main Menu")
   print(" ")
 
-  options()
+  #options()
 
 
 def options():
@@ -135,11 +159,38 @@ def options():
   return num_tickets, opt
 
   get_number_of_tickets()
-    
+
+def generate_barcode():
+  bar_list= []
+  if not bar_list:
+      bar_num = random.randint(100000000000,999999999999)
+      bar_list.append(bar_num)
+  else:
+      while bar_num in bar_list:
+          bar_num = random.randint(100000000000,999999999999)
+      bar_list.append(bar_num)
+  EAN = barcode.get_barcode_class('ean13')
+  ean = EAN(str(bar_num), writer=ImageWriter())
+  bar_code = ean.save('ean13_barcode')
+  return bar_num, bar_code
+
 
 def main():
   """Starts the ticketing program"""
+  customername = get_cust_name()
   mainmenu()
+  num_tickets, opt = options()
+  price = get_number_of_tickets(num_tickets)
+  ticket_amt = get_ticket_amount(price, opt)
+  gather(ticket_amt, price)
+  create_csv()
+  enter_csv()
+  ranum = samp_num()
+  bar_num, barcode = generate_barcode()
+  make_tix(customername, bar_num, barcode)
+
+
+
 
 if __name__ == '__main__':
   main()
