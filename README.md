@@ -1,9 +1,9 @@
 # P02: Ticket Tracker 
 
 
-**Author(s)**: John Martin, Aaron Christosn, Lakshiya Indreswaran, and Rofy Ray
+**Author(s)**: John Martin, Aaron Christson, Lakshiya Indreswaran, and Rofy Ray
 
-**Google Document**: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
+*Google Document*: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
 ---
 ## Purpose
 
@@ -11,7 +11,7 @@ The Theater department has been keeping track of their tickets by hand for a lon
 
 ## Initial Design Plan
 
--Raspberry Pi
+-Raspberry Pi or Arduino
 
 -ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 
 https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
@@ -58,13 +58,13 @@ Pictures always help, too.
 
 ## Delegation of Tasks
 
-- John Martin: will work on getting card scanner to create ticket 
+- John Martin: Will work on getting card scanner to create ticket 
 
 - Rofy Ray: Will work on making card scanner to send the ticket 
 
 - Aaron Christson: will work on finding trends in ticket collection based on needs of the department
 
-- Lakshiya Indreswaran: will 
+- Lakshiya Indreswaran: Will work on infrared implementation for counting tickets
 
 ## Files
 
