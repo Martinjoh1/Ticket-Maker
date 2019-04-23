@@ -94,6 +94,8 @@ Also, list any constraints that must exist for your product to work
 
 - https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cups
 
+- https://github.com/pklaus/brother_ql : shows how to print using Brother Printers throught python 
+
 
 ## Summary and Reflection
 *You'll complete this part at the end of the project.*
