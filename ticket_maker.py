@@ -3,6 +3,7 @@ import csv
 import random
 import barcode
 import random
+import os.path
 from fpdf import FPDF
 from barcode.writer import ImageWriter
 
@@ -59,18 +60,18 @@ def create_csv():
   """Make CSV file with appropriate headers"""
   csvData = ['Name', 'Classification', 'Price', 'ID']
 
-  with open('ticket.csv', 'w') as csvFile:
+  with open('ticket.csv', 'a') as csvFile:
     writer = csv.writer(csvFile)
     writer.writerow(csvData)
 
   csvFile.close()
 
-def enter_csv():
+def enter_csv(customername, opt, price, ID):
   """Populate CSV file with information"""
   with open('ticket.csv', 'a') as csvAdd:
     writer = csv.writer(csvAdd)
-    #writer.writerow(row)
-
+    row = [customername, opt, price, ID]
+    writer.writerow(row)
   csvAdd.close()
 
 def samp_num():
@@ -102,15 +103,15 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt="KINETIC EXPRESSIONS", ln=1, align="C")
   pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
   pdf.cell(200, 10, txt=" ", ln=3, align="C")
-  pdf.cell(200, 10, txt="             Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
-  pdf.cell(200, 10, txt="             Time: " + str(date.strftime("%I:%M:%S")), ln=5, align="C")
-  pdf.cell(200, 10, txt="             Venue: Jelkyl Drama Center", ln=6, align="C")
-  pdf.cell(200, 10, txt=" Name            : " + str(customername), ln=7, align="C")
-  pdf.cell(200, 10, txt=" Ticket ID       : " + str(bar_num), ln=8, align="C")
+  pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
+  pdf.cell(200, 10, txt=" Time: " + str(date.strftime("%I:%M:%S")), ln=5, align="C")
+  pdf.cell(200, 10, txt=" Venue: Jelkyl Drama Center", ln=6, align="C")
+  pdf.cell(200, 10, txt=" Name: " + str(customername), ln=7, align="C")
+  pdf.cell(200, 10, txt=" Ticket ID: " + str(bar_num), ln=8, align="C")
   pdf.cell(200, 10, txt=" ", ln=9, align="C")
-  pdf.ln(10)
-  pdf.image("ean13_barcode.png", x=5, y=4, w=50)
-  #pdf.cell(200, 10, txt="{}".format("ean13_barcode.png"), ln=10, align="C")
+  pdf.image("ean13_barcode.png", x=85, y=90, w=50)
+  pdf.cell(200, 10, txt=" ", ln=10, align="C")
+  pdf.cell(200, 10, txt=" ", ln=10, align="C")
   pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
   pdf.output("ticket.pdf")
@@ -183,11 +184,13 @@ def main():
   price = get_number_of_tickets(num_tickets)
   ticket_amt = get_ticket_amount(price, opt)
   gather(ticket_amt, price)
-  create_csv()
-  enter_csv()
+  if not os.path.isfile('ticket.csv'):
+      create_csv()
   ranum = samp_num()
   bar_num, barcode = generate_barcode()
   make_tix(customername, bar_num, barcode)
+  enter_csv(customername, opt, price, bar_num)
+
 
 
 
