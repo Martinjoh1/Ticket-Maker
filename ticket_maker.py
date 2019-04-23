@@ -3,6 +3,7 @@ import csv
 import random
 import barcode
 import random
+import os.path
 from fpdf import FPDF
 from barcode.writer import ImageWriter
 
@@ -59,18 +60,18 @@ def create_csv():
   """Make CSV file with appropriate headers"""
   csvData = ['Name', 'Classification', 'Price', 'ID']
 
-  with open('ticket.csv', 'w') as csvFile:
+  with open('ticket.csv', 'a') as csvFile:
     writer = csv.writer(csvFile)
     writer.writerow(csvData)
 
   csvFile.close()
 
-def enter_csv():
+def enter_csv(customername, opt, price, ID):
   """Populate CSV file with information"""
   with open('ticket.csv', 'a') as csvAdd:
     writer = csv.writer(csvAdd)
-    #writer.writerow(row)
-
+    row = [customername, opt, price, ID]
+    writer.writerow(row)
   csvAdd.close()
 
 def samp_num():
@@ -183,11 +184,13 @@ def main():
   price = get_number_of_tickets(num_tickets)
   ticket_amt = get_ticket_amount(price, opt)
   gather(ticket_amt, price)
-  create_csv()
-  enter_csv()
+  if not os.path.isfile('ticket.csv'):
+      create_csv()
   ranum = samp_num()
   bar_num, barcode = generate_barcode()
   make_tix(customername, bar_num, barcode)
+  enter_csv(customername, opt, price, bar_num)
+
 
 
 
