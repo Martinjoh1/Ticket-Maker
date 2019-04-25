@@ -9,7 +9,8 @@ from fpdf import FPDF
 import tempfile
 from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
-import pandas as pd
+from wand.image import Image
+
 
 def get_cust_name():
   """Get name from user"""
@@ -118,22 +119,18 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
   tic = pdf.output("ticket.pdf")
-  #
-  # filename = tic
-  #
-  # with tempfile.TemporaryDirectory() as path:
-  #     images_from_path = convert_from_path(filename, output_folder = path)
-  #
-  # base_filename  =  os.path.splitext(os.path.basename(filename))[0] + '.jpg'
-  #
-  # get_dir = os.path.dirname(os.path.abspath(filename))
-  #
-  # save_dir = os.path.dirname(get_dir)
-  #
-  # for page in images_from_path:
-  #     page.save(os.path.join(save_dir, base_filename), 'JPEG')
-  #
-  # print_tix()
+
+  file_pdf = tic
+
+  with(Image(filename = file_pdf, resolution=120)) as source:
+    images = source.sequence
+    pages = len(images)
+    for i in range(pages):
+        n = i + 1
+        newfilename = f[:-4] + str(n) + '.jpeg'
+        Image(images[i]).save(filename = newfilename)
+
+  print_tix()
 
 
 def print_tix():
