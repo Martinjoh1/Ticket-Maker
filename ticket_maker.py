@@ -10,6 +10,8 @@ import tempfile
 from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 from wand.image import Image
+import fitz
+
 
 
 def get_cust_name():
@@ -122,13 +124,12 @@ def make_tix(customername, bar_num, barcode):
 
   file_pdf = tic
 
-  with(Image(filename = file_pdf, resolution=120)) as source:
-    images = source.sequence
-    pages = len(images)
-    for i in range(pages):
-        n = i + 1
-        newfilename = f[:-4] + str(n) + '.jpeg'
-        Image(images[i]).save(filename = newfilename)
+  pdffile = file_pdf
+  doc = fitz.open(pdffile)
+  page = doc.loadPage(0) #number of page
+  pix = page.getPixmap()
+  output = "outfile.png"
+  pix.writePNG(output)
 
   print_tix()
 
