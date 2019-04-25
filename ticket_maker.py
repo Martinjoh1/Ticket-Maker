@@ -9,7 +9,7 @@ from fpdf import FPDF
 import tempfile
 from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
-
+import pandas as pd
 
 def get_cust_name():
   """Get name from user"""
@@ -118,22 +118,22 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
   tic = pdf.output("ticket.pdf")
-
-  filename = tic
-
-  with tempfile.TemporaryDirectory() as path:
-      images_from_path = convert_from_path(filename, output_folder = path, last_page = 1, first_page = 0)
-
-  base_filename  =  os.path.splitext(os.path.basename(filename))[0] + '.jpg'
-
-  get_dir = os.path.dirname(os.path.abspath(filename))
-
-  save_dir = os.path.dirname(get_dir)
-
-  for page in images_from_path:
-      page.save(os.path.join(save_dir, base_filename), 'JPEG')
-
-  print_tix()
+  #
+  # filename = tic
+  #
+  # with tempfile.TemporaryDirectory() as path:
+  #     images_from_path = convert_from_path(filename, output_folder = path)
+  #
+  # base_filename  =  os.path.splitext(os.path.basename(filename))[0] + '.jpg'
+  #
+  # get_dir = os.path.dirname(os.path.abspath(filename))
+  #
+  # save_dir = os.path.dirname(get_dir)
+  #
+  # for page in images_from_path:
+  #     page.save(os.path.join(save_dir, base_filename), 'JPEG')
+  #
+  # print_tix()
 
 
 def print_tix():
@@ -179,7 +179,13 @@ def options():
   get_number_of_tickets()
 
 def generate_barcode():
-  bar_list= []
+  try:
+      data = pd.read_csv("ticket.csv")
+      bar_list = list(data["ID"])
+      # print(id_list)
+  except:
+      bar_list= []
+  print(bar_list)
   if not bar_list:
       bar_num = random.randint(100000000000,999999999999)
       bar_list.append(bar_num)
