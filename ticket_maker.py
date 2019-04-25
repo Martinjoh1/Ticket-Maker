@@ -114,7 +114,21 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt=" ", ln=10, align="C")
   pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
-  pdf.output("ticket.pdf")
+  tic = pdf.output("ticket.pdf")
+
+  filename = tic
+
+  with tempfile.TemporaryDirectory() as path:
+      images_from_path = convert_from_path(filename, output_folder = path, last_page = 1, first_page = 0)
+
+  base_filename  =  os.path.splitext(os.path.basename(filename))[0] + '.jpg'
+
+  get_dir = os.path.dirname(os.path.abspath(filename))
+
+  save_dir = os.path.dirname(get_dir)
+
+  for page in images_from_path:
+      page.save(os.path.join(save_dir, base_filename), 'JPEG')
 
   print_tix()
 
