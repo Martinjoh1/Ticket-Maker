@@ -227,6 +227,7 @@ def main():
       bar_num, barcode = generate_barcode()
       make_tix(customername, bar_num, barcode, event, i)
       enter_csv(customername, opt, ticket_amt, bar_num)
+  print("Your tickets are printing now.")
 
 
 
