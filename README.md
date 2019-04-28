@@ -7,31 +7,21 @@
 ---
 ## Purpose
 
-The Theater department has been keeping track of their tickets by hand for a long time. We know that this is often inefficient, and inaccurate. We are hoping to use an embedded system to help them record ticket trends, as well as to make tickets electronically or physically. 
+The Theater department has been keeping track of their tickets by hand for a very long time. We know that this is mostly inefficient, and and can lead to a lot of inaccuracy. This was confirmed by the department chair when she asked if something could be done about the situation currently at hand. As a result, we are seeking to build an embedded system that will help them record ticket trends, as well as create tickets electronically, which they can then print physically. 
 
 ## Initial Design Plan
 
--Raspberry Pi or Arduino
+The initial plan is to be able to write a python script that the Raspberry Pi can execute. The script will provide the user with a menu that will allow them to purchase a ticket based on their status as well as the number of total tickets they need. The status of the customer or user determines the price of the ticket and also allows the theater department to keep records of the ticket classification and trends. After the necessary information is collected through the options provided in the script, they are then put together to make an electronic ticket. The electronic ticket is then saved and printed into an actual ticket.
 
--ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 
-https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
-
--THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email)
-https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE
-
-
-**NOTE**: Your initial design plan may not fully reflect your final product,
-as projects evolve over time.
 
 ### Hardware Design
 - List the hardware components you'll be using, and how they interact. 
 
-This is an appropriate place for a diagram. An EXCELLENT resource 
-for creating diagrams is the [Fritzing website](http://fritzing.org/home/ "Fritzing website")
+* Inateck Barcode Scanner: scans the unique barcode generated on the physical ticket to check if ticket is valid
+* Brother QL-700 Label Printer: prints the physical ticket when ready
+* Raspberry Pi: acts as the central sytem to which the scanner and printer will be hooked. this also executes the ticket program
 
-**Sample image (to be removed)**:
-
-![A sample image to show how to add one to a repo](images/example.png "A sample image. This is the text that appears.")
+![Ticket_Program_Diagram](images/example.png "A sample image. This is the text that appears.")
 
 ### Software Design
 - List all of the classes and functions you'll be creating.
@@ -94,6 +84,11 @@ Also, list any constraints that must exist for your product to work
 
 - https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cups
 
+-ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 
+https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
+
+-THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email)
+https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE
 
 ## Summary and Reflection
 *You'll complete this part at the end of the project.*
