@@ -18,49 +18,64 @@ import pandas as pd
 def get_cust_name():
   """Get name from user"""
   cust_name = None
+  event = None
   while cust_name is None:
       try:
-        cust_name = str(input('Please enter your name.\n'))
+        cust_name = str(input('Please enter your name?\n'))
       except ValueError:
         print ("Invalid entry; please enter a valid name.")
-  return cust_name
+  while event is None:
+      try:
+        event = str(input('What is the name of the event.\n'))
+      except ValueError:
+        print ("Invalid entry; please enter a valid name.")
+  return cust_name, event
 
 #customername = get_cust_name()
 
 
-def get_number_of_tickets(num_tickets):
+def get_number_of_tickets():
   """Get number of tickets to enter from user"""
-  if num_tickets == 1:
-    price = 0
+  num_tickets = 0
   while num_tickets == 0:
       try:
-        price = int(input('How many tickets do you want to get?\n'))
+        num_tickets = int(input('How many tickets do you want to get?\n'))
       except:
         print ("Invalid entry for number of tickets.")
-  return price
+  return num_tickets
 
   #get_ticket_amount()
 
 # num_tickets = get_number_of_tickets()
 
 
-def get_ticket_amount(price, opt):
+def get_ticket_amount(opt):
   """Get the ticket amounts from user"""
   if (opt == "B" or "CH"):
-    ticket_amt = price
-  else:
-    ticket_amt = 10 * price
+      ticket_amt = 0
+  if (opt == "S"):
+      ticket_amt = 30
+  if (opt == "G"):
+      ticket_amt = 12
+  if (opt == "SN"):
+      ticket_amt = 10
+  if (opt == "ST"):
+      ticket_amt = 8
+  if (opt == "CH"):
+      ticket_amt = 5
+  if (opt == "C"):
+      ticket_amt = 0
   return ticket_amt
 
 
-def gather(ticket_amt, price):
-  for ticket in range(0, price):
+def gather(ticket_amt, amount_list):
+  for i,amount in enumerate(amount_list):
     user_tickets = []
-    ticket_amount = ticket_amt
+    ticket_amount = amount
     # add to list once we know we have valid inputs
     user_tickets.append(ticket_amount)
-    print ("Ticket {0} added with amount {1}".format(ticket+1, ticket_amount))
-    print (user_tickets)
+    print ("Ticket {0} added with amount {1}".format(i+1, amount))
+    # print (user_tickets)
 
 
 def create_csv():
@@ -89,7 +104,7 @@ def samp_num():
 date = datetime.date.today()
 
 
-def make_tix(customername, bar_num, barcode):
+def make_tix(customername, bar_num, barcode, event,i):
   """Print ticket details"""
   # print("KINETIC EXPRESSIONS")
   # print("____________________________________")
@@ -107,7 +122,7 @@ def make_tix(customername, bar_num, barcode):
   pdf = FPDF()
   pdf.add_page()
   pdf.set_font("Arial", size=12)
-  pdf.cell(200, 10, txt="KINETIC EXPRESSIONS", ln=1, align="C")
+  pdf.cell(200, 10, txt=str(event), ln=1, align="C")
   pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
   pdf.cell(200, 10, txt=" ", ln=3, align="C")
   pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
@@ -121,7 +136,7 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt=" ", ln=10, align="C")
   pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
-  tic = pdf.output("ticket.pdf")
+  tic = pdf.output("ticket" + str(i) + ".pdf")
 
   # file_pdf = tic
   #
@@ -129,7 +144,7 @@ def make_tix(customername, bar_num, barcode):
   # for image in images:
   #   image.save('ticket.jpg', 'JPEG')
 
-  print_tix()
+
 
 
 def print_tix():
@@ -165,12 +180,9 @@ def mainmenu():
 
 def options():
   """Give user ticket options"""
-  opt = input("Enter your option : ")
-  if (opt == "B" or "CH"):
-    num_tickets = 1
-  else:
-    num_tickets = 0
-  return num_tickets, opt
+  opt = input("What is your classification? : ")
+
+  return opt
 
   get_number_of_tickets()
 
@@ -200,18 +212,21 @@ def generate_barcode():
 
 def main():
   """Starts the ticketing program"""
-  customername = get_cust_name()
-  mainmenu()
-  num_tickets, opt = options()
-  price = get_number_of_tickets(num_tickets)
-  ticket_amt = get_ticket_amount(price, opt)
-  gather(ticket_amt, price)
-  if not os.path.isfile('ticket.csv'):
-      create_csv()
-  ranum = samp_num()
-  bar_num, barcode = generate_barcode()
-  make_tix(customername, bar_num, barcode)
-  enter_csv(customername, opt, price, bar_num)
+  customername, event = get_cust_name()
+  num_tickets = get_number_of_tickets()
+  for i in range(num_tickets):
+      mainmenu()
+      opt = options()
+      amount_list=[]
+      ticket_amt = get_ticket_amount(opt)
+      amount_list.append(ticket_amt)
+      # gather(ticket_amt, amount_list)
+      if not os.path.isfile('ticket.csv'):
+          create_csv()
+      ranum = samp_num()
+      bar_num, barcode = generate_barcode()
+      make_tix(customername, bar_num, barcode, event, i)
+      enter_csv(customername, opt, ticket_amt, bar_num)
 
 
 
