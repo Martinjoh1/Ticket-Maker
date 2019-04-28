@@ -94,6 +94,13 @@ Also, list any constraints that must exist for your product to work
 
 - https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cups
 
+- https://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/https://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/ : shows us how to print using CUPS
+
+  - https://www.rs-online.com/designspark/building-a-pi-powered-wireless-label-printer :  How to add brother QL printer to raspberry Pi
+  
+   - 
+
+
 
 ## Summary and Reflection
 *You'll complete this part at the end of the project.*
