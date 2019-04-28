@@ -78,6 +78,8 @@ This section should THOROUGHLY describe its usage (i.e., more than just "Push st
 ## Errors and Constraints
 *You'll complete this part at the end of the project.*
 
+
+Printing: Printing the ticket using a printer is the hartdest
 Every program has bugs. Use this section to create a bullet list of
 all known errors and deficiencies that remain in your product. 
 Also, list any constraints that must exist for your product to work 
