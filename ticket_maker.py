@@ -9,8 +9,9 @@ from fpdf import FPDF
 import tempfile
 from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
-from wand.image import Image
-import fitz
+import pandas as pd
+# from wand.image import Image
+# import fitz
 
 
 
@@ -122,14 +123,11 @@ def make_tix(customername, bar_num, barcode):
   pdf.cell(200, 10, txt=" ", ln=12, align="C")
   tic = pdf.output("ticket.pdf")
 
-  file_pdf = tic
-
-  pdffile = file_pdf
-  doc = fitz.open(pdffile)
-  page = doc.loadPage(0) #number of page
-  pix = page.getPixmap()
-  output = "outfile.png"
-  pix.writePNG(output)
+  # file_pdf = tic
+  #
+  # images = convert_from_path('ticket.pdf')
+  # for image in images:
+  #   image.save('ticket.jpg', 'JPEG')
 
   print_tix()
 
@@ -180,17 +178,20 @@ def generate_barcode():
   try:
       data = pd.read_csv("ticket.csv")
       bar_list = list(data["ID"])
-      # print(id_list)
+      # print(bar_list)
   except:
+      print("didnt work")
       bar_list= []
-  print(bar_list)
+  # print(bar_list)
   if not bar_list:
       bar_num = random.randint(100000000000,999999999999)
       bar_list.append(bar_num)
   else:
+      bar_num = random.randint(100000000000,999999999999)
       while bar_num in bar_list:
           bar_num = random.randint(100000000000,999999999999)
       bar_list.append(bar_num)
+  # print(bar_list)
   EAN = barcode.get_barcode_class('ean13')
   ean = EAN(str(bar_num), writer=ImageWriter())
   bar_code = ean.save('ean13_barcode')
