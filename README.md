@@ -108,6 +108,8 @@ Also, list any constraints that must exist for your product to work
 ## Summary and Reflection
 *You'll complete this part at the end of the project.*
 
+
+
 Write 3 - 5 paragraphs on your reactions to the final project. 
 Your reflection should be thoughtful and reflective. 
 First, report on what you did. Then, reflect on those actions. 
@@ -124,33 +126,33 @@ You can't give both people 6 points each though, as the sum exceeds 10.
 
 ### Ideation, Brainstorming, Design:
 
-*Partner 1 (replace this with your name): 0-10*
+*Partner 1 Aaron Christson: 0-10*
 
-*Partner 2 (replace this with your name): 0-10*
+*Partner 2 Raymond Okyere Forson: 0-10*
 
-*Partner 3 (replace this with your name): 0-10*
+*Partner 3 Lakshiya Indreswaran: 0-10*
 
-*Partner 4 (replace this with your name): 0-10*
+*Partner 4 John Martin: 0-10*
 
 ### Physical wiring/construction: 
 
-*Partner 1 (replace this with your name): 0-10*
+*Partner 1 Aaron Christson: 0-10*
 
-*Partner 2 (replace this with your name): 0-10*
+*Partner 2 Raymond Okyere Forson: 0-10*
 
-*Partner 3 (replace this with your name): 0-10*
+*Partner 3 Lakshiya Indreswaran: 0-10*
 
-*Partner 4 (replace this with your name): 0-10*
+*Partner 4 John Martin: 0-10*
 
 ### Code creation/debugging/integration: 
 
-*Partner 1 (replace this with your name): 0-10*
+*Partner 1 Aaron Christson: 0-10*
 
-*Partner 2 (replace this with your name): 0-10*
+*Partner 2 Raymond Okyere Forson: 0-10*
 
-*Partner 3 (replace this with your name): 0-10*
+*Partner 3 Lakshiya Indreswaran: 0-10*
 
-*Partner 4 (replace this with your name): 0-10*
+*Partner 4 John Martin: 0-10*
 
 ### Documentation:
 
@@ -164,14 +166,13 @@ You can't give both people 6 points each though, as the sum exceeds 10.
 
 ### Leadership, Teamwork, & Participation:
 
-*Partner 1 (replace this with your name): 0-10*
+*Partner 1 Aaron Christson: 0-10*
 
-*Partner 2 (replace this with your name): 0-10*
+*Partner 2 Raymond Okyere Forson: 0-10*
 
-*Partner 3 (replace this with your name): 0-10*
+*Partner 3 Lakshiya Indreswaran: 0-10*
 
-*Partner 4 (replace this with your name): 0-10*
-
+*Partner 4 John Martin: 0-10*
 
 ---
 **A Note from Scott to You**
