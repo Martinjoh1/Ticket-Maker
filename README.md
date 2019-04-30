@@ -60,11 +60,12 @@ They work together in order to show which people have come to the events which a
 
 ###Ticket Creation:
 
-![Ticket_Program_Diagram](images/ticket.jpg)
+![Ticket_Program_print](images/print.PNG)
 
 ###Scanned Tickets:
 
-![Ticket_Program_Diagram](images/ticket.jpg)
+![Ticket_Program_scan](images/scan.PNG)
+
 
 ## Delegation of Tasks
 
