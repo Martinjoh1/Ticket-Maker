@@ -60,7 +60,9 @@ Pictures always help, too.
 ## Files
 
 ticket_maker.py : It contains the main code for creating the ticket with bar code
+
 Barcode_test.py :  Initial code for creating barcode
+
 Qrcode_test.py : Code for creating a QR code
 
 
