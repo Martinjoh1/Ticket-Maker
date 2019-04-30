@@ -18,12 +18,12 @@ def get_cust_name():
   event = None
   while cust_name is None:
       try:
-        cust_name = str(input('Please enter your name?\n'))
+        cust_name = str(input('Please enter your name.\n'))
       except ValueError:
         print ("Invalid entry; please enter a valid customer name.")
   while event is None:
       try:
-        event = str(input('What is the name of the show.\n'))
+        event = str(input('Please enter the name of the show.\n'))
       except ValueError:
         print ("Invalid entry; please enter a valid show name.")
   return cust_name, event
@@ -111,21 +111,21 @@ def make_tix(customername, bar_num, barcode, event,i):
 
   pdf = FPDF()
   pdf.add_page()
-  pdf.set_font("Courier New", size=12)
-  pdf.cell(200, 10, txt=str(event), ln=1, align="C")
-  pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
-  pdf.cell(200, 10, txt=" ", ln=3, align="C")
-  pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%m/%d/%Y")), ln=4, align="C")
-  pdf.cell(200, 10, txt=" Show Time: " + '20' + ':' + '00' + ':' + '00', ln=5, align="C")
-  pdf.cell(200, 10, txt=" Venue: Jelkyl Drama Center", ln=6, align="C")
-  pdf.cell(200, 10, txt=" Name: " + str(customername), ln=7, align="C")
-  pdf.cell(200, 10, txt=" Ticket ID: " + str(bar_num), ln=8, align="C")
-  pdf.cell(200, 10, txt=" ", ln=9, align="C")
-  pdf.image("ean13_barcode.png", x=85, y=90, w=50)
-  pdf.cell(200, 10, txt=" ", ln=10, align="C")
-  pdf.cell(200, 10, txt=" ", ln=10, align="C")
-  pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
-  pdf.cell(200, 10, txt=" ", ln=12, align="C")
+  pdf.set_font("Courier", size = 12)
+  pdf.cell(200, 10, txt = str(event), ln = 1, align = "C")
+  pdf.cell(200, 10, txt = "____________________________________", ln = 2, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 3, align = "C")
+  pdf.cell(200, 10, txt = " Date: " + str(date.strftime("%m/%d/%Y")), ln = 4, align = "C")
+  pdf.cell(200, 10, txt = " Show Time: " + '20' + ':' + '00' + ':' + '00', ln = 5, align = "C")
+  pdf.cell(200, 10, txt = " Venue: Jelkyl Drama Center", ln = 6, align = "C")
+  pdf.cell(200, 10, txt = " Name: " + str(customername), ln = 7, align = "C")
+  pdf.cell(200, 10, txt = " Ticket ID: " + str(bar_num), ln = 8, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 9, align = "C")
+  pdf.image("ean13_barcode.png", x = 85, y = 90, w = 50)
+  pdf.cell(200, 10, txt = " ", ln = 10, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 10, align = "C")
+  pdf.cell(200, 10, txt = "_____________________________________", ln = 11, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 12, align = "C")
   tic = pdf.output("ticket" + str(i) + ".pdf")
 
   # file_pdf = tic
@@ -165,7 +165,7 @@ def mainmenu():
 
 def options():
   """Give user ticket options"""
-  opt = input("What is your classification? : ")
+  opt = input("Please enter your classification code to continue : ")
 
   return opt
 
@@ -179,7 +179,7 @@ def generate_barcode():
       # print(bar_list)
   except:
       print("didnt work")
-      bar_list= []
+      bar_list = []
   # print(bar_list)
   if not bar_list:
       bar_num = str(random.randint(100000000000,999999999999))
@@ -203,7 +203,7 @@ def main():
   for i in range(num_tickets):
       mainmenu()
       opt = options()
-      amount_list=[]
+      amount_lis = []
       ticket_amt = get_ticket_amount(opt)
       amount_list.append(ticket_amt)
       # gather(ticket_amt, amount_list)
