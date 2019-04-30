@@ -1,7 +1,7 @@
 # P02: Ticket Tracker 
 
 
-**Author(s)**: John Martin, Aaron Christson, Lakshiya Indreswaran, and Rofy Ray
+**Author(s)**: John Martin, Aaron Christson, Lakshiya Indreswaran, and Raymond Okyere-Forson (Rofy Ray).
 
 *Google Document*: https://docs.google.com/document/d/1V5N-4NouEUfvDezkXH5lArIH8y42cbMOIZle4GVud_w/edit?usp=sharing
 ---
@@ -15,10 +15,10 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
 
 
 ### Hardware Design
-- List the hardware components you'll be using, and how they interact. 
 
 * Inateck Barcode Scanner: scans the unique barcode generated on the physical ticket to check if ticket is valid
-* Brother QL-700 Label Printer: prints the physical ticket when ready
+* Brother QL-700 Label Printer: prints the physical ticket when ready in a smaller dimension
+* Berea Follow Me Black and White Printer: prints the physical ticket when ready on letter size paper
 * Raspberry Pi: acts as the central sytem to which the scanner and printer will be hooked. this also executes the ticket program
 
 - This is how to set up the Raspberry Pi
@@ -28,7 +28,7 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
 ![Ticket_Program_Diagram](images/Theeee.jpg)
 
 ### Software Design
-- in the ticktet_maker file  
+- in the ticktet_maker file: 
   - get_cust_name(): Function that takes input of coustomers name
   - get_number_of_tickets(): Function that takes input of number of tickets 
   - num_tickets: Function that ask for number of tickets being made
@@ -43,7 +43,7 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
   - make_tix: Function that makes the ticket 
   - enter_csv(customername, opt, ticket_amt, bar_num): Function that inters coustomer name, opt, ticket amt, and barcode number into the CSV 
 
-- In the ticket_scanner file
+- In the ticket_scanner file:
   - create_scanned_csv(): function that creates the CSV file holding the tickets barcode numbers
   - add_to_csv(): adds scanned Barcode to CSV file
   - Check_valid(): function that checks if the scanned Barcode Matches any barcode in the file already
@@ -74,7 +74,7 @@ ticket_maker.py : It contains the main code for creating the ticket with bar cod
 
 tickte_scanner.py: Contains the code that scans and compares the ticket to the CSV file
 
-Barcode_test.py :  Initial code for creating barcode
+Barcode_test.py :  Initial code for creating a barcode
 
 Qrcode_test.py : Code for creating a QR code
 
@@ -82,20 +82,20 @@ Qrcode_test.py : Code for creating a QR code
 ## Instructions
 - user will need to install VNC on their computer 
 - user will need a mouse, keyboard, ethernet cord and a screen, and follow the instructions on this website https://www.raspberrypi.org/documentation/remote-access/vnc/
-- user then needs to run the program 
-- enter the information provided
-- A ticket will be printed 
-- Scan ticket night of the performance 
-- The scanner should say if the ticket scanned is valid or not
+- user then needs to call the python script 
+- enter the information prompted by the program
+- A ticket will be printed after all the necessary information has been collected
+- Scan ticket on the night of the performance using the barcode scanner
+- The system should say if the ticket scanned is valid or not, and also whether the ticket has already been scanned.
 
 ## Errors and Constraints
 - Printing: 
   
-  - Printing the ticket using a printer was the difficult part.  We have had problem in using the rapberry pi to print the documents. We were able to intsall CUPS library but for the Lexmark printer it gave an error message "Printer is not responding" and for brother QL700, it showed the printing job is completed but it did not print anything. We tried to use brother QL ppd directly to print the ticket and we were able to print via brother QL printer using raspberry Pi but the only problem was the library allows us to only print images in png format. The ticket we have created is in PDF. Thus it does not allow us to print the ticket. We tried different ways to convert pdf to image but it was harder than we thought. The libraries were complicated and we still have issues in converting pdf to image. Our solution to this problem is to print through VNC server installed in the laptop. 
+  - Printing the ticket using a label printer was the difficult part.  We had problems in using the rapberry pi to print the documents. We were able to intsall CUPS library but for the Lexmark printer it gave an error message "Printer is not responding" and for brother QL700, it showed the printing job is completed but it did not print anything. We tried to use brother QL ppd directly to print the ticket and we were able to print via brother QL printer using raspberry Pi but the only problem was the library allows us to only print images in png format. The ticket our system generates is in PDF. Thus it does not allow us to print the ticket. We tried different ways to convert pdf to image but it was harder than we initially thought. The libraries were complicated and we still have issues in converting pdf to image. Our solution to this problem was to print through the printers connected on the network, thus, using the Follow Me Black and White printer. This allowed to print the pdf tickets. 
 
-- We could not make the GUI for the user to easily input the ticket information
+- We could not make a GUI for the user to easily interact with the ticket system. Implementation of this proved difficult as we only got it to work partially.
 
-- We did not test the code on the pi soon enough, and there were a lot of things that needed to be installed last minute.
+- Running the code on the Raspberry Pi was a little different than when we tested the scripts on our laptops. This means that we had to change certain functions so it could run on the Pi.
 
 ## References
 
@@ -120,53 +120,53 @@ Qrcode_test.py : Code for creating a QR code
 
 ### Ideation, Brainstorming, Design:
 
-*Aaron Christson: 2.5
+*Aaron Christson: 2.5*
 
-*Raymond Okyere-Forson: 2.5
+*Raymond Okyere-Forson: 2.5*
 
-*Lakshiya Indreswaran: 2.5
+*Lakshiya Indreswaran: 2.5*
 
-*John Martin: 2.5
+*John Martin: 2.5*
 
 ### Physical wiring/construction: 
 
-*Aaron Christson: 2.5
+*Aaron Christson: 2.5*
 
-*Raymond Okyere-Forson: 2.5
+*Raymond Okyere-Forson: 2.5*
 
-*Lakshiya Indreswaran: 2.5
+*Lakshiya Indreswaran: 2.5*
 
-*John Martin: 2.5
+*John Martin: 2.5*
 
 ### Code creation/debugging/integration: 
 
-*Aaron Christson: 2.5
+*Aaron Christson: 2.5*
 
-*Raymond Okyere-Forson: 2.5
+*Raymond Okyere-Forson: 2.5*
 
-*Lakshiya Indreswaran: 2.5
+*Lakshiya Indreswaran: 2.5*
 
-*John Martin: 2.5
+*John Martin: 2.5*
 
 ### Documentation:
 
-*Aaron Christson: 2.5
+*Aaron Christson: 2.5*
 
-*Raymond Okyere-Forson: 2.5
+*Raymond Okyere-Forson: 2.5*
 
-*Lakshiya Indreswaran: 2.5
+*Lakshiya Indreswaran: 2.5*
 
-*John Martin: 2.5
+*John Martin: 2.5*
 
 ### Leadership, Teamwork, & Participation:
 
-*Aaron Christson: 2.5
+*Aaron Christson: 2.5*
 
-*Raymond Okyere-Forson: 2.5
+*Raymond Okyere-Forson: 2.5*
 
-*Lakshiya Indreswaran: 2.5
+*Lakshiya Indreswaran: 2.5*
 
-*John Martin: 2.5
+*John Martin: 2.5*
 
 ---
 
