@@ -21,7 +21,7 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
 * Brother QL-700 Label Printer: prints the physical ticket when ready
 * Raspberry Pi: acts as the central sytem to which the scanner and printer will be hooked. this also executes the ticket program
 
-![Ticket_Program_Diagram](images/The(1).jpg "A sample image. This is the text that appears.")
+![Ticket_Program_Diagram](images/The (1).png "A sample image. This is the text that appears.")
 ![Ticket_Program_Diagram](images/The (2).jpg "A sample image. This is the text that appears.")
 ![Ticket_Program_Diagram](images/The (3).jpg "A sample image. This is the text that appears.")
 ![Ticket_Program_Diagram](images/The (4).jpg "A sample image. This is the text that appears.")
