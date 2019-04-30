@@ -58,11 +58,11 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
 
 They work together in order to show which people have come to the events which also eliminates counting people by hand. 
 
-###Ticket Creation:
+### Ticket Creation:
 
 ![Ticket_Program_print](images/print.PNG)
 
-###Scanned Tickets:
+### Scanned Tickets:
 
 ![Ticket_Program_scan](images/scan.PNG)
 
