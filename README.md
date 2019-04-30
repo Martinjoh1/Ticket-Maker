@@ -90,7 +90,9 @@ Also, list any constraints that must exist for your product to work
 
 - https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cups
 
+- ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
 
+- THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email) https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE 
 
 ## Summary and Reflection
 I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
@@ -113,58 +115,47 @@ You can't give both people 6 points each though, as the sum exceeds 10.
 
 ### Ideation, Brainstorming, Design:
 
-*Partner 1 Aaron Christson: 0-10*
+*Aaron Christson: 0-10*
 
-*Partner 2 Raymond Okyere Forson: 0-10*
+*Raymond Okyere-Forson: 0-10*
 
-*Partner 3 Lakshiya Indreswaran: 0-10*
+*Lakshiya Indreswaran: 0-10*
 
-*Partner 4 John Martin: 0-10*
+*John Martin: 0-10*
 
 ### Physical wiring/construction: 
 
-*Partner 1 Aaron Christson: 0-10*
+*Aaron Christson: 0-10*
 
-*Partner 2 Raymond Okyere Forson: 0-10*
+*Raymond Okyere-Forson: 0-10*
 
-*Partner 3 Lakshiya Indreswaran: 0-10*
+*Lakshiya Indreswaran: 0-10*
 
-*Partner 4 John Martin: 0-10*
+*John Martin: 0-10*
 
 ### Code creation/debugging/integration: 
 
-*Partner 1 Aaron Christson: 0-10*
+*Aaron Christson: 0-10*
 
-*Partner 2 Raymond Okyere Forson: 0-10*
+*Raymond Okyere-Forson: 0-10*
 
-*Partner 3 Lakshiya Indreswaran: 0-10*
+*Lakshiya Indreswaran: 0-10*
 
-*Partner 4 John Martin: 0-10*
+*John Martin: 0-10*
 
 ### Documentation:
 
-*Partner 1 Aaron Christson: 0-10*
 
-*Partner 2 Raymond Okyere Forson: 0-10*
-
-*Partner 3 Lakshiya Indreswaran: 0-10*
-
-*Partner 4 John Martin: 0-10*
 
 ### Leadership, Teamwork, & Participation:
 
-*Partner 1 Aaron Christson: 0-10*
+*Aaron Christson: 0-10*
 
-*Partner 2 Raymond Okyere Forson: 0-10*
+*Raymond Okyere-Forson: 0-10*
 
-*Partner 3 Lakshiya Indreswaran: 0-10*
+*Lakshiya Indreswaran: 0-10*
 
-*Partner 4 John Martin: 0-10*
+*John Martin: 0-10*
 
 ---
-**A Note from Scott to You**
 
-While I expect this project to be challenging, one
-thing to keep in mind is HAVE FUN with it! Create a product that
-expresses your personal interests. Break up the writing so it’s not so burdensome.
-We will have a live demo sessions at the end of the project to celebrate your accomplishments.
