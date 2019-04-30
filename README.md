@@ -107,8 +107,9 @@ Also, list any constraints that must exist for your product to work
 
 
 ## Summary and Reflection
-I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
+I think we have done a good job in creating a tiket for the theatre department that can be printed. When we approached teh theatre department fpor our project, the only help they needed was to create a ticket system for the theatre perfromance. They have requested various components but we couldn't include everything because of the time limitationa and other privacy concerns. for example they wanted the system to be able to identify the fulltime student. In order for us to identify the fulltime student, we would need  access to banner and we can not access it. Another requirement needed us to create payment system and it is complicate and beyond our capacity. We have agreed on generating a ticket that will contain a bar code. so that tickets can be scanned at the entrance during the performance and the students doesn'y have to count the number of tickets manually. 
 
+We have created a ticket with bar code. Ticket will have th name of the person who bought the ticket and the bar code. once the bar code is scanned, the program will check whether or not the ticket is valid. everytime a ticket is scanned, it will be saved in a csv file and it will help them to find out how many people have attended the event. 
 
 
 Write 3 - 5 paragraphs on your reactions to the final project. 
