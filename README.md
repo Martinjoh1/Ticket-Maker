@@ -69,7 +69,10 @@ This section should THOROUGHLY describe its usage (i.e., more than just "Push st
 *You'll complete this part at the end of the project.*
 
 
-Printing: Printing the ticket using a printer is the hartdest
+Printing: 
+  Printing the ticket using a printer was the difficult part.  We have had problem in using the rapberry pi to print the documents. We were able to intsall CUPS library but for the Lexmark printer it gave an error message "Printer is not responding" and for brother QL700, it showed the printing job is completed but it did not print anything. We tried to use brother QL ppd directly to print the ticket and we were able to print via brother QL printer using raspberry Pi but the only problem was the library allows us to only print images in png format. The ticket we have created is in PDF. Thus it doesn't allow us to print the ticket. We tried different ways to convert pdf to image but it was harder than we thought. The libraries were complicated and we still have issues in converting pdf to image. Our solution to this problem is to print through VNC server installed in the laptop. 
+
+
 Every program has bugs. Use this section to create a bullet list of
 all known errors and deficiencies that remain in your product. 
 Also, list any constraints that must exist for your product to work 
@@ -92,7 +95,7 @@ Also, list any constraints that must exist for your product to work
 - THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email) https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE 
 
 ## Summary and Reflection
-*You'll complete this part at the end of the project.*
+I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
 
 
 
@@ -142,13 +145,7 @@ You can't give both people 6 points each though, as the sum exceeds 10.
 
 ### Documentation:
 
-*Aaron Christson: 0-10*
 
-*Raymond Okyere-Forson: 0-10*
-
-*Lakshiya Indreswaran: 0-10*
-
-*John Martin: 0-10*
 
 ### Leadership, Teamwork, & Participation:
 
