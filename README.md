@@ -21,7 +21,8 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
 * Brother QL-700 Label Printer: prints the physical ticket when ready
 * Raspberry Pi: acts as the central sytem to which the scanner and printer will be hooked. this also executes the ticket program
 
-![Ticket_Program_Diagram](images/The.jpg "This is how to set up the Pi")
+- This is how to set up the Raspberry Pi
+![Ticket_Program_Diagram](images/The.jpg)
 ![Ticket_Program_Diagram](images/Thee.jpg)
 ![Ticket_Program_Diagram](images/Theee.jpg)
 ![Ticket_Program_Diagram](images/Theeee.jpg)
@@ -42,7 +43,7 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
   - make_tix: Function that makes the ticket 
   - enter_csv(customername, opt, ticket_amt, bar_num): Function that inters coustomer name, opt, ticket amt, and barcode number into the CSV 
 
--In the ticket_scanner file
+- In the ticket_scanner file
   - create_scanned_csv(): function that creates the CSV file holding the tickets barcode numbers
   - add_to_csv(): adds scanned Barcode to CSV file
   - Check_valid(): function that checks if the scanned Barcode Matches any barcode in the file already
