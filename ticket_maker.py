@@ -8,7 +8,6 @@ import os
 import os.path
 from fpdf import FPDF
 import tempfile
-from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 import pandas as pd
 
