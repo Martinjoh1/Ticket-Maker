@@ -8,10 +8,6 @@ import os
 import os.path
 from fpdf import FPDF
 import tempfile
-<<<<<<< HEAD
-=======
-# from pdf2image import convert_from_path
->>>>>>> 811cda81f6f94bcec9baa69a280c3b8cddf8bbce
 from barcode.writer import ImageWriter
 import pandas as pd
 
@@ -73,7 +69,7 @@ def gather(ticket_amt, amount_list):
 
 def create_csv():
   """Make CSV file with appropriate headers"""
-  csvData = ['Name', 'Classification', 'Price', 'ID']
+  csvData = ['Name', 'Classification', 'Price', 'ID', '\n']
 
   with open('ticket.csv', 'a') as csvFile:
     writer = csv.writer(csvFile)
@@ -85,7 +81,7 @@ def enter_csv(customername, opt, price, ID):
   """Populate CSV file with information"""
   with open('ticket.csv', 'a') as csvAdd:
     writer = csv.writer(csvAdd)
-    row = [customername, opt, price, ID]
+    row = [customername, opt, price, ID, '\n']
     writer.writerow(row)
   csvAdd.close()
 
@@ -192,7 +188,6 @@ def generate_barcode():
       while bar_num in bar_list:
           bar_num = str(random.randint(100000000000,999999999999))
       bar_list.append(bar_num)
-  print(bar_num)
   EAN = barcode.get_barcode_class('ean13')
   ean = EAN(str(bar_num), writer=ImageWriter())
   bar_code = ean.save('ean13_barcode')
@@ -206,7 +201,7 @@ def main():
   for i in range(num_tickets):
       mainmenu()
       opt = options()
-      amount_lis = []
+      amount_list = []
       ticket_amt = get_ticket_amount(opt)
       amount_list.append(ticket_amt)
       # gather(ticket_amt, amount_list)
