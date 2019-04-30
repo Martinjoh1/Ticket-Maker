@@ -93,7 +93,7 @@ Also, list any constraints that must exist for your product to work
 
 
 ## Summary and Reflection
-        I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
+I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
 
 
 
