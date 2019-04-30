@@ -17,12 +17,12 @@ def get_cust_name():
   event = None
   while cust_name is None:
       try:
-        cust_name = str(input('Please enter your name.\n'))
+        cust_name = raw_input('Please enter your name.\n')
       except ValueError:
         print ("Invalid entry; please enter a valid customer name.")
   while event is None:
       try:
-        event = str(input('Please enter the name of the show.\n'))
+        event = raw_input('Please enter the name of the show.\n')
       except ValueError:
         print ("Invalid entry; please enter a valid show name.")
   return cust_name, event
@@ -164,7 +164,7 @@ def mainmenu():
 
 def options():
   """Give user ticket options"""
-  opt = input("Please enter your classification code to continue : ")
+  opt = raw_input("Please enter your classification code to continue : ")
 
   return opt
 
@@ -212,6 +212,10 @@ def main():
       make_tix(customername, bar_num, barcode, event, i)
       enter_csv(customername, opt, ticket_amt, bar_num)
   print("Your ticket(s) are printing now.")
+  os.system("lp ticket0.pdf")
+  os.system("qpdfview ticket0.pdf")
+
+
 
 if __name__ == '__main__':
   main()

@@ -21,7 +21,7 @@ def add_to_csv(id):
     csvAdd.close()
 
 def check_valid():
-    id = str(input("Ready to scan."+"\n"))
+    id = raw_input("Ready to scan."+"\n")
     new_id = ""
     for i in range(len(id)-1):
         new_id += id[i]
