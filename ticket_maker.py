@@ -193,14 +193,14 @@ def generate_barcode():
       bar_list= []
   # print(bar_list)
   if not bar_list:
-      bar_num = random.randint(100000000000,999999999999)
+      bar_num = str(random.randint(100000000000,999999999999))
       bar_list.append(bar_num)
   else:
-      bar_num = random.randint(100000000000,999999999999)
+      bar_num = str(random.randint(100000000000,999999999999))
       while bar_num in bar_list:
-          bar_num = random.randint(100000000000,999999999999)
+          bar_num = str(random.randint(100000000000,999999999999))
       bar_list.append(bar_num)
-  # print(bar_list)
+  print(bar_num)
   EAN = barcode.get_barcode_class('ean13')
   ean = EAN(str(bar_num), writer=ImageWriter())
   bar_code = ean.save('ean13_barcode')
