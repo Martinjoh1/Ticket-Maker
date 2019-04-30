@@ -7,7 +7,7 @@
 ---
 ## Purpose
 
-The Theater department has been keeping track of their tickets by hand for a very long time. We know that this is mostly inefficient, and and can lead to a lot of inaccuracy. This was confirmed by the department chair when she asked if something could be done about the situation currently at hand. As a result, we are seeking to build an embedded system that will help them record ticket trends, as well as create tickets electronically, which they can then print physically. 
+The Theater department has been keeping track of their tickets by hand for a very long time. We know that this is mostly inefficient, and can lead to a lot of inaccuracy. This was confirmed by the department chair when she asked if something could be done about the situation currently at hand. As a result, we are seeking to build an embedded system that will help them record ticket trends, as well as create tickets electronically, which they can then print physically. 
 
 ## Initial Design Plan
 
@@ -54,7 +54,15 @@ The initial plan is to be able to write a python script that the Raspberry Pi ca
    
 
 ### Additional Requirement
-- We printed a ticket. This brings us one step closer to a finished project, because the implementation of printing a ticket is something you would see in an Theater.
+- To allow for the ticket trends to be tracked by the department, we created two CSV files; one for ticket creation, and one for scanning. These two files would serve as some sort of database system to help them keep track of tickets that were sold and those that showed up during shows. This allows the process to be done electronically versus how it used to be done manually before.
+
+They work together in order to show which people have come to the events which also eliminates counting people by hand. 
+
+###Ticket Creation:
+
+![Ticket_Program_Diagram](images/ticket.jpg)
+
+###Scanned Tickets:
 
 ![Ticket_Program_Diagram](images/ticket.jpg)
 
