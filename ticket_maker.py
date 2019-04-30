@@ -3,6 +3,7 @@ import csv
 import random
 import barcode
 import random
+import time
 import os
 import os.path
 from fpdf import FPDF
@@ -10,10 +11,6 @@ import tempfile
 from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 import pandas as pd
-# from wand.image import Image
-# import fitz
-
-
 
 def get_cust_name():
   """Get name from user"""
