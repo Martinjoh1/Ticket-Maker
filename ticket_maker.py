@@ -123,7 +123,7 @@ def make_tix(customername, bar_num, barcode, event,i):
   pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
   pdf.cell(200, 10, txt=" ", ln=3, align="C")
   pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%m/%d/%Y")), ln=4, align="C")
-  pdf.cell(200, 10, txt=" Time: " + str(20':'00':'00), ln=5, align="C")
+  pdf.cell(200, 10, txt=" Time: " + '20' + ':' + '00' + ':' + '00', ln=5, align="C")
   pdf.cell(200, 10, txt=" Venue: Jelkyl Drama Center", ln=6, align="C")
   pdf.cell(200, 10, txt=" Name: " + str(customername), ln=7, align="C")
   pdf.cell(200, 10, txt=" Ticket ID: " + str(bar_num), ln=8, align="C")
