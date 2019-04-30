@@ -8,7 +8,7 @@ import os
 import os.path
 from fpdf import FPDF
 import tempfile
-from pdf2image import convert_from_path
+# from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 import pandas as pd
 
@@ -18,17 +18,15 @@ def get_cust_name():
   event = None
   while cust_name is None:
       try:
-        cust_name = str(input('Please enter your name?\n'))
+        cust_name = str(input('Please enter your name.\n'))
       except ValueError:
-        print ("Invalid entry; please enter a valid name.")
+        print ("Invalid entry; please enter a valid customer name.")
   while event is None:
       try:
-        event = str(input('What is the name of the event.\n'))
+        event = str(input('Please enter the name of the show.\n'))
       except ValueError:
-        print ("Invalid entry; please enter a valid name.")
+        print ("Invalid entry; please enter a valid show name.")
   return cust_name, event
-
-#customername = get_cust_name()
 
 
 def get_number_of_tickets():
@@ -41,14 +39,10 @@ def get_number_of_tickets():
         print ("Invalid entry for number of tickets.")
   return num_tickets
 
-  #get_ticket_amount()
-
-# num_tickets = get_number_of_tickets()
-
 
 def get_ticket_amount(opt):
   """Get the ticket amounts from user"""
-  if (opt == "B" or "CH"):
+  if (opt == "B" or "CH" or "C"):
       ticket_amt = 0
   if (opt == "S"):
       ticket_amt = 30
@@ -58,10 +52,9 @@ def get_ticket_amount(opt):
       ticket_amt = 10
   if (opt == "ST"):
       ticket_amt = 8
-  if (opt == "CH"):
-      ticket_amt = 5
-  if (opt == "C"):
-      ticket_amt = 0
+  if (opt == "M"):
+      mainmenu()
+
   return ticket_amt
 
 
@@ -118,21 +111,21 @@ def make_tix(customername, bar_num, barcode, event,i):
 
   pdf = FPDF()
   pdf.add_page()
-  pdf.set_font("Arial", size=12)
-  pdf.cell(200, 10, txt=str(event), ln=1, align="C")
-  pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
-  pdf.cell(200, 10, txt=" ", ln=3, align="C")
-  pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
-  pdf.cell(200, 10, txt=" Time: " + str(date.strftime("%I:%M:%S")), ln=5, align="C")
-  pdf.cell(200, 10, txt=" Venue: Jelkyl Drama Center", ln=6, align="C")
-  pdf.cell(200, 10, txt=" Name: " + str(customername), ln=7, align="C")
-  pdf.cell(200, 10, txt=" Ticket ID: " + str(bar_num), ln=8, align="C")
-  pdf.cell(200, 10, txt=" ", ln=9, align="C")
-  pdf.image("ean13_barcode.png", x=85, y=90, w=50)
-  pdf.cell(200, 10, txt=" ", ln=10, align="C")
-  pdf.cell(200, 10, txt=" ", ln=10, align="C")
-  pdf.cell(200, 10, txt="_____________________________________", ln=11, align="C")
-  pdf.cell(200, 10, txt=" ", ln=12, align="C")
+  pdf.set_font("Courier", size = 12)
+  pdf.cell(200, 10, txt = str(event), ln = 1, align = "C")
+  pdf.cell(200, 10, txt = "____________________________________", ln = 2, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 3, align = "C")
+  pdf.cell(200, 10, txt = " Date: " + str(date.strftime("%m/%d/%Y")), ln = 4, align = "C")
+  pdf.cell(200, 10, txt = " Show Time: " + '20' + ':' + '00' + ':' + '00', ln = 5, align = "C")
+  pdf.cell(200, 10, txt = " Venue: Jelkyl Drama Center", ln = 6, align = "C")
+  pdf.cell(200, 10, txt = " Name: " + str(customername), ln = 7, align = "C")
+  pdf.cell(200, 10, txt = " Ticket ID: " + str(bar_num), ln = 8, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 9, align = "C")
+  pdf.image("ean13_barcode.png", x = 85, y = 90, w = 50)
+  pdf.cell(200, 10, txt = " ", ln = 10, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 10, align = "C")
+  pdf.cell(200, 10, txt = "_____________________________________", ln = 11, align = "C")
+  pdf.cell(200, 10, txt = " ", ln = 12, align = "C")
   tic = pdf.output("ticket" + str(i) + ".pdf")
 
   # file_pdf = tic
@@ -142,16 +135,14 @@ def make_tix(customername, bar_num, barcode, event,i):
   #   image.save('ticket.jpg', 'JPEG')
 
 
-
-
 def print_tix():
   """Print ticket from connected printer"""
   afta = input("Kindly hit 'P' to print your show ticket or press 'M' to go back to the Main Menu...")
+  print("M - to return to Main Menu")
+
   if (afta == "P"):
     # code to send ticket to printer
     pass
-  elif (afta == "M"):
-    mainmenu()
   else:
     mainmenu()
 
@@ -169,19 +160,17 @@ def mainmenu():
   print("CH - to purchase ticket for Child")
   print("C - to purchase ticket for Complimentary")
   print("GR - to purchase ticket for Group")
-  print("M - to return to Main Menu")
   print(" ")
-
-  #options()
 
 
 def options():
   """Give user ticket options"""
-  opt = input("What is your classification? : ")
+  opt = input("Please enter your classification code to continue : ")
 
   return opt
 
   get_number_of_tickets()
+
 
 def generate_barcode():
   try:
@@ -190,17 +179,17 @@ def generate_barcode():
       # print(bar_list)
   except:
       print("didnt work")
-      bar_list= []
+      bar_list = []
   # print(bar_list)
   if not bar_list:
-      bar_num = random.randint(100000000000,999999999999)
+      bar_num = str(random.randint(100000000000,999999999999))
       bar_list.append(bar_num)
   else:
-      bar_num = random.randint(100000000000,999999999999)
+      bar_num = str(random.randint(100000000000,999999999999))
       while bar_num in bar_list:
-          bar_num = random.randint(100000000000,999999999999)
+          bar_num = str(random.randint(100000000000,999999999999))
       bar_list.append(bar_num)
-  # print(bar_list)
+  print(bar_num)
   EAN = barcode.get_barcode_class('ean13')
   ean = EAN(str(bar_num), writer=ImageWriter())
   bar_code = ean.save('ean13_barcode')
@@ -214,7 +203,7 @@ def main():
   for i in range(num_tickets):
       mainmenu()
       opt = options()
-      amount_list=[]
+      amount_lis = []
       ticket_amt = get_ticket_amount(opt)
       amount_list.append(ticket_amt)
       # gather(ticket_amt, amount_list)
@@ -224,11 +213,7 @@ def main():
       bar_num, barcode = generate_barcode()
       make_tix(customername, bar_num, barcode, event, i)
       enter_csv(customername, opt, ticket_amt, bar_num)
-  print("Your tickets are printing now.")
-
-
-
-
+  print("Your ticket(s) are printing now.")
 
 if __name__ == '__main__':
   main()
