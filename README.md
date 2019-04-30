@@ -88,11 +88,14 @@ Also, list any constraints that must exist for your product to work
 
 - https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address : helps us to find the pi's IP 
 
-- https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cups
+- https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using cup
 
-- ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
+-ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
 
-- THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email) https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE 
+- THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email) https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE
+
+- https://github.com/pklaus/brother_ql : shows how to print using Brother Printers throught python 
+
 
 ## Summary and Reflection
 I think we have done a good job in creating a tiket for the theatre department. We crea a unique ticket and print it 
