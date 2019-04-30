@@ -11,6 +11,7 @@ from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 from wand.image import Image
 import fitz
+from frontend import *
 
 
 
