@@ -8,7 +8,7 @@ import os
 import os.path
 from fpdf import FPDF
 import tempfile
-from pdf2image import convert_from_path
+# from pdf2image import convert_from_path
 from barcode.writer import ImageWriter
 import pandas as pd
 
@@ -122,8 +122,8 @@ def make_tix(customername, bar_num, barcode, event,i):
   pdf.cell(200, 10, txt=str(event), ln=1, align="C")
   pdf.cell(200, 10, txt="____________________________________", ln=2, align="C")
   pdf.cell(200, 10, txt=" ", ln=3, align="C")
-  pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%d/%m/%Y")), ln=4, align="C")
-  pdf.cell(200, 10, txt=" Time: " + str(date.strftime("%I:%M:%S")), ln=5, align="C")
+  pdf.cell(200, 10, txt=" Date: " + str(date.strftime("%m/%d/%Y")), ln=4, align="C")
+  pdf.cell(200, 10, txt=" Time: " + str(20:00:00), ln=5, align="C")
   pdf.cell(200, 10, txt=" Venue: Jelkyl Drama Center", ln=6, align="C")
   pdf.cell(200, 10, txt=" Name: " + str(customername), ln=7, align="C")
   pdf.cell(200, 10, txt=" Ticket ID: " + str(bar_num), ln=8, align="C")
@@ -225,10 +225,6 @@ def main():
       make_tix(customername, bar_num, barcode, event, i)
       enter_csv(customername, opt, ticket_amt, bar_num)
   print("Your tickets are printing now.")
-
-
-
-
 
 if __name__ == '__main__':
   main()
