@@ -55,7 +55,12 @@ Pictures always help, too.
 
 ## Files
 
-N/A
+ticket_maker.py : It contains the main code for creating the ticket with bar code
+
+Barcode_test.py :  Initial code for creating barcode
+
+Qrcode_test.py : Code for creating a QR code
+
 
 ## Instructions
 - user will need to install VNC on their computer 
@@ -84,17 +89,11 @@ N/A
 
 - https://www.raspberrypi.org/forums/viewtopic.php?t=180370 : shows how to print using CUPS
 
-- ETEKJOY USB 3-Track Magnetic Stripe Card Reader, POS Credit Card Reader Swiper, MagStripe Swipe Card Reader ET-MSR90 https://www.amazon.com/ETEKJOY-3-Track-Magnetic-Stripe-MagStripe/dp/B01N4L19CR
-
-- THERMAL RECEIPT PRINTER GUTS (can be replaced by text message or email) https://www.adafruit.com/product/2753?gclid=CjwKCAjwqLblBRBYEiwAV3pCJqJ9Z-Jb5PTlz0TFcmZE-3NG65DisyA5k5aAfUEgbkX2h4EVbqHaOBoCdjEQAvD_BwE
-
-- https://github.com/pklaus/brother_ql : shows how to print using Brother Printers throught python 
-
-
 ## Summary and Reflection
   I think we have done a good job in creating a tiket for the theatre department. We created a unique ticket and are able to print it. This project showed us all that we should be prepared for anything. It takes a lot of asking the department what they were looking for in the embedded system, and narrowing our idea down to something manageable. It also took discussing what each individual had learned, and how to apply it to the project. 
   We had gotten the Ql-700 printer to work at one point, but then, the SD card with of the pi it was working on gained a problem. In order to fix this we decided to print from the vnc using CUPS. The great thing is that we are able to make a ticket that can then 
 
+We have created a ticket with bar code. Ticket will have th name of the person who bought the ticket and the bar code. once the bar code is scanned, the program will check whether or not the ticket is valid. everytime a ticket is scanned, it will be saved in a csv file and it will help them to find out how many people have attended the event. 
 
 
 Write 3 - 5 paragraphs on your reactions to the final project. 
