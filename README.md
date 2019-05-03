@@ -89,12 +89,20 @@ Qrcode_test.py : Code for creating a QR code
 
 
 ## Instructions
-- user will need to install VNC on their computer 
-- user will need a mouse, keyboard, ethernet cord and a screen, and follow the instructions on this website https://www.raspberrypi.org/documentation/remote-access/vnc/
-- user then needs to call the python script 
-- enter the information prompted by the program
-- A ticket will be printed after all the necessary information has been collected
-- Scan ticket on the night of the performance using the barcode scanner
+- user will need to install VNC on their computer, if they plan to use the Raspberry Pi remotely 
+- user will need a mouse, keyboard, ethernet cord and a screen, and can follow the instructions on this website: https://www.raspberrypi.org/documentation/remote-access/vnc/
+- user then needs to call the python script
+  * open up a terminal
+  * change the directory to where the scripts can be found (cd into the foler)
+  * enter 'py ticket_maker.py' and hit enter
+- put in the necessary information as prompted by the program
+- the ticket will be printed after all the necessary information has been collected and then display the pdf version of the ticket on screen afterwards
+- scan ticket on the night of the performance using the barcode scanner
+  * plug in the USB cord connected to the scanner into the computer
+  * open up a terminal
+  * change the directory to where the scripts can be found (cd into the foler)
+  * enter 'py ticket_scanner.py' and hit enter
+  * the program will let you know when to scan
 - The system should say if the ticket scanned is valid or not, and also whether the ticket has already been scanned.
 
 ## Errors and Constraints
